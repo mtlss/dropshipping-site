@@ -1,7 +1,100 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mon Site Dropshipping</title>
+  <style>
+    /* RESET / BASE */
+    body, ul, li, h1, h2, h3, p {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+    a { text-decoration: none; color: #333; }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 20px;
+      background-color: #f8f8f8;
+      position: relative;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    /* MENU BURGER */
+    .menu-btn { display: none; }
+
+    .menu-icon {
+      display: block;
+      cursor: pointer;
+      width: 30px;
+      height: 25px;
+      position: relative;
+    }
+
+    .navicon, .navicon:before, .navicon:after {
+      background: #333;
+      height: 3px;
+      width: 30px;
+      display: block;
+      position: absolute;
+      transition: all 0.3s;
+    }
+    .navicon:before { content: ''; top: -10px; }
+    .navicon:after { content: ''; top: 10px; }
+
+    /* MENU PRINCIPAL */
+    .menu {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      width: 100%;
+      background-color: #f8f8f8;
+      text-align: center;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
+    .menu li { margin: 15px 0; }
+    .menu a { font-weight: bold; font-size: 18px; }
+
+    /* Afficher menu quand burger activé */
+    .menu-btn:checked ~ .menu {
+      display: flex;
+    }
+
+    /* RESPONSIVE DESKTOP */
+    @media (min-width: 768px) {
+      .menu { 
+        display: flex !important;
+        position: static;
+        flex-direction: row;
+        justify-content: flex-end;
+        box-shadow: none;
+        background: none;
+      }
+      .menu li { margin: 0 15px; }
+      .menu-icon, .menu-btn { display: none; }
+    }
+
+    /* CONTENU EXEMPLE */
+    section { padding: 50px 20px; }
+  </style>
+</head>
+<body>
+
 <header>
   <a href="#" class="logo">MT</a>
 
-  <!-- Checkbox pour le burger -->
+  <!-- Checkbox pour burger -->
   <input type="checkbox" id="menu-btn" class="menu-btn" />
   <label for="menu-btn" class="menu-icon">
     <span class="navicon"></span>
@@ -14,7 +107,24 @@
       <li><a href="#choisir-produit">Choisir Produit</a></li>
       <li><a href="#tendances">Tendances</a></li>
       <li><a href="#contact">Contact</a></li>
-      <!-- ajoute d'autres onglets si nécessaire -->
     </ul>
   </nav>
 </header>
+
+<!-- CONTENU EXEMPLE -->
+<section id="introduction"><h2>Introduction</h2><p>Contenu de l'introduction...</p></section>
+<section id="choisir-produit"><h2>Choisir Produit</h2><p>Contenu pour choisir un produit...</p></section>
+<section id="tendances"><h2>Tendances</h2><p>Contenu des tendances...</p></section>
+<section id="contact"><h2>Contact</h2><p>Contactez-nous...</p></section>
+
+<script>
+  // Fermer menu après clic sur un lien (mobile)
+  document.querySelectorAll('.menu a').forEach(link => {
+    link.addEventListener('click', () => {
+      document.getElementById('menu-btn').checked = false;
+    });
+  });
+</script>
+
+</body>
+</html>
