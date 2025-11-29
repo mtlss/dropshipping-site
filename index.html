@@ -157,9 +157,53 @@
 
     @media(max-width: 600px) {
         section { margin: 10px; padding: 15px; }
-        nav ul { flex-direction: column; }
-        nav ul li { margin-bottom: 8px; }
-        #intro-animation h1 { font-size: 4em; }
+        nav ul { 
+            flex-direction: column; 
+            align-items: flex-start;
+            padding: 10px;
+        }
+        nav ul li { 
+            margin-bottom: 8px; 
+            margin-right: 0;
+            width: 100%;
+        }
+        nav ul li a {
+            padding: 8px;
+            width: 100%;
+        }
+        #intro-animation h1 { 
+            font-size: 4em;
+            -webkit-text-stroke: 2px #ffffff;
+        }
+        header h1 {
+            font-size: 1.8em;
+        }
+        header p {
+            font-size: 1em;
+        }
+        h2 {
+            font-size: 1.5em;
+        }
+        .button-container {
+            flex-direction: column !important;
+        }
+        .button-container button {
+            width: 100% !important;
+            margin: 5px 0 !important;
+        }
+    }
+    
+    @media(max-width: 400px) {
+        #intro-animation h1 { 
+            font-size: 3em;
+        }
+        header {
+            padding: 80px 15px 20px;
+        }
+        section {
+            padding: 12px;
+            margin: 10px 5px;
+        }
     }
 </style>
 </head>
@@ -213,7 +257,7 @@
         <p style="font-size: 1.1em; color: #ffd700; margin-bottom: 15px; font-weight: bold;">
             🚀 Ouvre les sites d'analyse en 1 clic chacun :
         </p>
-        <div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;">
+        <div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;" class="button-container">
             <button onclick="window.open('https://trends.google.com/trends/?geo=FR', '_blank')" style="
                 background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
                 color: #000;
@@ -292,9 +336,9 @@
         <p style="font-size: 0.9em; color: #b0b0b0; margin-top: 15px;">
             ✅ Clique sur chaque bouton pour ouvrir le site - Aucun blocage !
         </p>
-    </div>" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
-            🔍 Analyser les Tendances Maintenant
-        </button>
+    </div>" 
+            
+        </button> 🔍 Analyser les Tendances Maintenant
         <p style="font-size: 0.9em; color: #b0b0b0; margin-top: 10px;">
             ⚠️ Autorise les pop-ups pour ouvrir tous les sites d'analyse
         </p>
