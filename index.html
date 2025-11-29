@@ -157,6 +157,9 @@
 
     @media(max-width: 600px) {
         section { margin: 10px; padding: 15px; }
+        nav {
+            position: relative;
+        }
         nav ul { 
             flex-direction: column; 
             align-items: flex-start;
@@ -171,6 +174,9 @@
             padding: 8px;
             width: 100%;
         }
+        header {
+            padding: 20px 20px 25px 20px;
+        }
         #intro-animation h1 { 
             font-size: 4em;
             -webkit-text-stroke: 2px #ffffff;
@@ -183,13 +189,6 @@
         }
         h2 {
             font-size: 1.5em;
-        }
-        .button-container {
-            flex-direction: column !important;
-        }
-        .button-container button {
-            width: 100% !important;
-            margin: 5px 0 !important;
         }
     }
     
@@ -219,7 +218,6 @@
     <ul>
         <li><a href="#intro"><span class="icon">🏠</span>Introduction</a></li>
         <li><a href="#produit"><span class="icon">🔎</span>Choisir Produit</a></li>
-        <li><a href="#tendances"><span class="icon">🔥</span>Tendances</a></li>
         <li><a href="#test"><span class="icon">🧪</span>Tester Produit</a></li>
         <li><a href="#astuces"><span class="icon">⚡</span>Astuces</a></li>
         <li><a href="#erreurs"><span class="icon">❌</span>Erreurs</a></li>
@@ -245,135 +243,6 @@
         <li><a href="https://trends.google.com/trends/?geo=FR" target="_blank">Google Trends</a></li>
         <li>Amazon, AliExpress, eBay → best-sellers</li>
         <li>TikTok, Instagram, Pinterest → observer produits populaires</li>
-    </ul>
-</section>
-
-<section id="tendances">
-    <h2>🔥 Sites pour Voir ce qui Marche Maintenant</h2>
-    <p>Découvre les produits tendance en temps réel :</p>
-    
-    <!-- BOUTON ANALYSE AUTO -->
-    <div style="text-align: center; margin: 25px 0;">
-        <p style="font-size: 1.1em; color: #ffd700; margin-bottom: 15px; font-weight: bold;">
-            🚀 Ouvre les sites d'analyse en 1 clic chacun :
-        </p>
-        <div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;" class="button-container">
-            <button onclick="window.open('https://trends.google.com/trends/?geo=FR', '_blank')" style="
-                background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
-                color: #000;
-                border: none;
-                padding: 12px 20px;
-                font-size: 0.95em;
-                font-weight: bold;
-                border-radius: 25px;
-                cursor: pointer;
-                box-shadow: 0 3px 10px rgba(255, 215, 0, 0.3);
-                transition: all 0.3s ease;
-            " onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
-                📊 Google Trends
-            </button>
-            
-            <button onclick="window.open('https://www.amazon.fr/gp/bestsellers/', '_blank')" style="
-                background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
-                color: #000;
-                border: none;
-                padding: 12px 20px;
-                font-size: 0.95em;
-                font-weight: bold;
-                border-radius: 25px;
-                cursor: pointer;
-                box-shadow: 0 3px 10px rgba(255, 215, 0, 0.3);
-                transition: all 0.3s ease;
-            " onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
-                🛒 Amazon Best-Sellers
-            </button>
-            
-            <button onclick="window.open('https://www.aliexpress.com/category/100003070/consumer-electronics.html', '_blank')" style="
-                background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
-                color: #000;
-                border: none;
-                padding: 12px 20px;
-                font-size: 0.95em;
-                font-weight: bold;
-                border-radius: 25px;
-                cursor: pointer;
-                box-shadow: 0 3px 10px rgba(255, 215, 0, 0.3);
-                transition: all 0.3s ease;
-            " onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
-                📦 AliExpress Trending
-            </button>
-            
-            <button onclick="window.open('https://www.tiktok.com/tag/tiktokmademebuyit', '_blank')" style="
-                background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
-                color: #000;
-                border: none;
-                padding: 12px 20px;
-                font-size: 0.95em;
-                font-weight: bold;
-                border-radius: 25px;
-                cursor: pointer;
-                box-shadow: 0 3px 10px rgba(255, 215, 0, 0.3);
-                transition: all 0.3s ease;
-            " onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
-                📱 TikTok Tendances
-            </button>
-            
-            <button onclick="window.open('https://www.thieve.co', '_blank')" style="
-                background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
-                color: #000;
-                border: none;
-                padding: 12px 20px;
-                font-size: 0.95em;
-                font-weight: bold;
-                border-radius: 25px;
-                cursor: pointer;
-                box-shadow: 0 3px 10px rgba(255, 215, 0, 0.3);
-                transition: all 0.3s ease;
-            " onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
-                🔥 Thieve.co
-            </button>
-        </div>
-        <p style="font-size: 0.9em; color: #b0b0b0; margin-top: 15px;">
-            ✅ Clique sur chaque bouton pour ouvrir le site - Aucun blocage !
-        </p>
-    </div>" 
-            
-        </button> 🔍 Analyser les Tendances Maintenant
-        <p style="font-size: 0.9em; color: #b0b0b0; margin-top: 10px;">
-            ⚠️ Autorise les pop-ups pour ouvrir tous les sites d'analyse
-        </p>
-    </div>
-    
-    <!-- INSTRUCTIONS DE RECHERCHE -->
-    <div style="background: #2a2a2a; padding: 20px; border-radius: 10px; margin: 20px 0; border-left: 4px solid #ffd700;">
-        <h3 style="color: #ffd700; margin-top: 0;">💡 Quoi rechercher sur chaque site ?</h3>
-        <ul style="line-height: 2;">
-            <li><strong>Google Trends :</strong> Tape "dropshipping products 2025", "produits tendance", ou une catégorie (ex: "fitness gadgets")</li>
-            <li><strong>Amazon :</strong> Va dans "Meilleures ventes" puis filtre par catégorie (Électronique, Maison, Sports...)</li>
-            <li><strong>AliExpress :</strong> Clique sur "Super Deals" ou tri par "Commandes" pour voir ce qui se vend le plus</li>
-            <li><strong>TikTok :</strong> Cherche #tiktokmademebuyit, #amazonfinds, #productreview, #viralproduct</li>
-            <li><strong>Thieve.co :</strong> Regarde directement les produits recommandés (déjà analysés pour toi)</li>
-        </ul>
-    </div>
-    
-    <h3>📊 Analyse de tendances</h3>
-    <ul>
-        <li><a href="https://trends.google.com/trends/?geo=FR" target="_blank">Google Trends</a> - Recherches populaires</li>
-        <li><a href="https://www.thieve.co" target="_blank">Thieve.co</a> - Produits gagnants dropshipping</li>
-        <li><a href="https://www.pexda.com" target="_blank">Pexda</a> - Analyse de boutiques à succès</li>
-        <li><a href="https://www.dropship.io" target="_blank">Dropship.io</a> - Produits tendance</li>
-    </ul>
-    <h3>🛍️ Marketplaces pour l'inspiration</h3>
-    <ul>
-        <li><a href="https://www.amazon.fr/gp/bestsellers/" target="_blank">Amazon Best-Sellers</a></li>
-        <li><a href="https://www.aliexpress.com/category/100003070/consumer-electronics.html" target="_blank">AliExpress Trending</a></li>
-        <li><a href="https://www.etsy.com/trending" target="_blank">Etsy Trending</a></li>
-    </ul>
-    <h3>📱 Réseaux sociaux</h3>
-    <ul>
-        <li><a href="https://www.tiktok.com" target="_blank">TikTok</a> - Cherche #tiktokmademebuyit</li>
-        <li><a href="https://www.instagram.com/explore/" target="_blank">Instagram Explore</a></li>
-        <li><a href="https://www.pinterest.com" target="_blank">Pinterest</a> - Idées produits</li>
     </ul>
 </section>
 
@@ -438,41 +307,6 @@
 </footer>
 
 <script>
-    // Fonction pour analyser les tendances automatiquement
-    function analyserTendances() {
-        // Liste des sites à ouvrir
-        const sites = [
-            { url: 'https://trends.google.com/trends/?geo=FR', nom: 'Google Trends' },
-            { url: 'https://www.amazon.fr/gp/bestsellers/', nom: 'Amazon Best-Sellers' },
-            { url: 'https://www.aliexpress.com/category/100003070/consumer-electronics.html', nom: 'AliExpress Trending' },
-            { url: 'https://www.tiktok.com/tag/tiktokmademebuyit', nom: 'TikTok' },
-            { url: 'https://www.thieve.co', nom: 'Thieve.co' }
-        ];
-        
-        // Message d'alerte avec instructions
-        const message = `🚀 ANALYSE DES TENDANCES
-        
-✅ ${sites.length} sites vont s'ouvrir !
-
-⚠️ IMPORTANT : 
-Si les pop-ups sont bloquées, clique sur l'icône 🚫 dans la barre d'adresse et autorise-les.
-
-💡 ASTUCE : 
-Consulte les instructions ci-dessous pour savoir quoi rechercher sur chaque site !`;
-        
-        alert(message);
-        
-        // Ouvre tous les sites avec un délai
-        sites.forEach((site, index) => {
-            setTimeout(() => {
-                const newWindow = window.open(site.url, '_blank');
-                if (!newWindow) {
-                    console.log(`❌ ${site.nom} bloqué par le navigateur`);
-                }
-            }, index * 800); // 800ms entre chaque ouverture
-        });
-    }
-
     // Bouton retour en haut + animation sections
     let topBtn = document.getElementById("topBtn");
     window.onscroll = function() {scrollFunction()};
