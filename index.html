@@ -76,6 +76,18 @@
         z-index: 1000;
         box-shadow: 0 2px 5px rgba(0,0,0,0.5);
     }
+    
+    /* Bouton burger (caché sur desktop) */
+    .burger-btn {
+        display: none;
+        background: none;
+        border: none;
+        color: #ffd700;
+        font-size: 28px;
+        cursor: pointer;
+        padding: 10px 20px;
+    }
+    
     nav ul {
         list-style: none;
         margin: 0;
@@ -156,27 +168,46 @@
     #topBtn:hover { background-color: #ffed4e; }
 
     @media(max-width: 600px) {
-        section { margin: 10px; padding: 15px; }
-        nav {
-            position: relative;
+        /* Affiche le bouton burger sur mobile */
+        .burger-btn {
+            display: block;
         }
-        nav ul { 
+        
+        /* Cache le menu par défaut */
+        nav ul {
+            display: none;
             flex-direction: column; 
             align-items: flex-start;
             padding: 10px;
+            width: 100%;
         }
+        
+        /* Affiche le menu quand ouvert */
+        nav ul.show {
+            display: flex;
+        }
+        
         nav ul li { 
             margin-bottom: 8px; 
             margin-right: 0;
             width: 100%;
         }
         nav ul li a {
-            padding: 8px;
+            padding: 12px 8px;
             width: 100%;
+            display: block;
         }
+        
+        section { 
+            margin: 10px; 
+            padding: 15px;
+            margin-top: 70px;
+        }
+        
         header {
-            padding: 20px 20px 25px 20px;
+            padding-top: 80px;
         }
+        
         #intro-animation h1 { 
             font-size: 4em;
             -webkit-text-stroke: 2px #ffffff;
@@ -215,13 +246,14 @@
 
 <!-- MENU DE NAVIGATION -->
 <nav>
-    <ul>
-        <li><a href="#intro"><span class="icon">🏠</span>Introduction</a></li>
-        <li><a href="#produit"><span class="icon">🔎</span>Choisir Produit</a></li>
-        <li><a href="#test"><span class="icon">🧪</span>Tester Produit</a></li>
-        <li><a href="#astuces"><span class="icon">⚡</span>Astuces</a></li>
-        <li><a href="#erreurs"><span class="icon">❌</span>Erreurs</a></li>
-        <li><a href="#fournisseurs"><span class="icon">📦</span>Fournisseurs</a></li>
+    <button class="burger-btn" onclick="toggleMenu()">☰</button>
+    <ul id="menu">
+        <li><a href="#intro" onclick="closeMenu()"><span class="icon">🏠</span>Introduction</a></li>
+        <li><a href="#produit" onclick="closeMenu()"><span class="icon">🔎</span>Choisir Produit</a></li>
+        <li><a href="#test" onclick="closeMenu()"><span class="icon">🧪</span>Tester Produit</a></li>
+        <li><a href="#astuces" onclick="closeMenu()"><span class="icon">⚡</span>Astuces</a></li>
+        <li><a href="#erreurs" onclick="closeMenu()"><span class="icon">❌</span>Erreurs</a></li>
+        <li><a href="#fournisseurs" onclick="closeMenu()"><span class="icon">📦</span>Fournisseurs</a></li>
     </ul>
 </nav>
 
@@ -307,6 +339,20 @@
 </footer>
 
 <script>
+    // Toggle menu mobile
+    function toggleMenu() {
+        const menu = document.getElementById('menu');
+        menu.classList.toggle('show');
+    }
+    
+    // Ferme le menu quand on clique sur un lien
+    function closeMenu() {
+        const menu = document.getElementById('menu');
+        if (window.innerWidth <= 600) {
+            menu.classList.remove('show');
+        }
+    }
+
     // Bouton retour en haut + animation sections
     let topBtn = document.getElementById("topBtn");
     window.onscroll = function() {scrollFunction()};
