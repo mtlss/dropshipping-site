@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guide Complet : Dropshipping Débutant</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f5f5f5;
+        scroll-behavior: smooth;
+    }
+
+    /* MENU FIXE AVEC ICÔNES */
+    nav {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background-color: #1e73be;
+        color: white;
+        z-index: 1000;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+    nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 10px 20px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    nav ul li {
+        margin-right: 15px;
+        display: flex;
+        align-items: center;
+    }
+    nav ul li a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+    }
+    nav ul li a span.icon {
+        margin-right: 5px;
+        font-size: 1.1em;
+    }
+    nav ul li a:hover {
+        color: #ffd700;
+    }
+
+    header {
+        background-color: #1e73be;
+        color: white;
+        padding: 100px 20px 25px 20px;
+        text-align: center;
+        transition: opacity 1s ease-in-out;
+        opacity: 0;
+    }
+    section {
+        background-color: white;
+        margin: 20px auto;
+        padding: 20px;
+        max-width: 900px;
+        border-radius: 10px;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.8s ease-in-out;
+    }
+
+    h2 { color: #1e73be; margin-top:0; }
+    h3 { color: #333; }
+    ul { line-height: 1.8; padding-left: 20px; }
+    a { color: #1e73be; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    footer {
+        background-color: #222;
+        color: white;
+        text-align: center;
+        padding: 15px;
+        margin-top: 30px;
+    }
+
+    /* BOUTON RETOUR EN HAUT */
+    #topBtn {
+        display: none;
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        z-index: 100;
+        font-size: 18px;
+        background-color: #1e73be;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 50px;
+        cursor: pointer;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    }
+    #topBtn:hover { background-color: #145a91; }
+
+    @media(max-width: 600px) {
+        section { margin: 10px; padding: 15px; }
+        nav ul { flex-direction: column; }
+        nav ul li { margin-bottom: 8px; }
+    }
+</style>
+</head>
+<body>
+
+<!-- MENU DE NAVIGATION -->
+<nav>
+    <ul>
+        <li><a href="#intro"><span class="icon">🏠</span>Introduction</a></li>
+        <li><a href="#fournisseurs"><span class="icon">📦</span>Fournisseurs</a></li>
+        <li><a href="#produit"><span class="icon">🔎</span>Choisir Produit</a></li>
+        <li><a href="#test"><span class="icon">🧪</span>Tester Produit</a></li>
+        <li><a href="#boutique"><span class="icon">🛒</span>Lancer Boutique</a></li>
+        <li><a href="#astuces"><span class="icon">⚡</span>Astuces</a></li>
+        <li><a href="#erreurs"><span class="icon">❌</span>Erreurs</a></li>
+    </ul>
+</nav>
+
+<header id="intro">
+    <h1>Guide Complet : Comment Faire du Dropshipping</h1>
+    <p>De la recherche de produit à la mise en ligne de ta boutique</p>
+</header>
+
+<section id="fournisseurs">
+    <h2>📦 Comment Trouver de Bons Fournisseurs</h2>
+    <p>Quelques plateformes fiables pour débuter :</p>
+    <h3>🌍 Fournisseurs internationaux</h3>
+    <ul>
+        <li><a href="https://www.aliexpress.com" target="_blank">AliExpress</a></li>
+        <li><a href="https://www.alibaba.com" target="_blank">Alibaba</a></li>
+        <li><a href="https://cjdropshipping.com" target="_blank">CJ Dropshipping</a></li>
+        <li><a href="https://www.spocket.co" target="_blank">Spocket</a></li>
+    </ul>
+    <h3>🇪🇺 Europe</h3>
+    <ul>
+        <li><a href="https://www.bigbuy.eu" target="_blank">BigBuy</a></li>
+        <li><a href="https://www.beezup.com" target="_blank">BeezUP</a></li>
+    </ul>
+    <h3>🇫🇷 France</h3>
+    <ul>
+        <li><a href="https://www.chinadivision.com" target="_blank">France-Dropshipping</a></li>
+        <li><a href="https://www.colissimo.entreprise.laposte.fr" target="_blank">Colissimo Pro</a></li>
+    </ul>
+</section>
+
+<section id="produit">
+    <h2>🔎 Comment Choisir le Bon Produit</h2>
+    <ul>
+        <li>Produit utile ou effet “wow”</li>
+        <li>Peu compétitif</li>
+        <li>Marge 30-50%</li>
+        <li>Facile à expédier</li>
+    </ul>
+    <h3>💡 Trouver les tendances</h3>
+    <ul>
+        <li><a href="https://trends.google.com/trends/?geo=FR" target="_blank">Google Trends</a></li>
+        <li>Amazon, AliExpress, eBay → best-sellers</li>
+        <li>TikTok, Instagram, Pinterest → observer produits populaires</li>
+    </ul>
+</section>
+
+<section id="test">
+    <h2>🧪 Tester un produit avant de lancer</h2>
+    <ul>
+        <li>Créer page produit ou formulaire test</li>
+        <li>Publier vidéos sur TikTok/Instagram</li>
+        <li>Observer likes, commentaires, partages</li>
+        <li>Si positif → petite campagne pub</li>
+    </ul>
+</section>
+
+<section id="boutique">
+    <h2>🛒 Lancer ta Boutique</h2>
+    <ul>
+        <li>Choisir plateforme : Shopify, Wix, WordPress + WooCommerce, ou gratuit</li>
+        <li>Créer page produit professionnelle</li>
+        <li>Ajouter avis clients</li>
+        <li>Configurer moyens de paiement</li>
+    </ul>
+</section>
+
+<section id="astuces">
+    <h2>⚡ Astuces pour Réussir</h2>
+    <ul>
+        <li>Commencer avec un seul produit</li>
+        <li>Vidéo marketing courte</li>
+        <li>Fournisseur rapide</li>
+        <li>Images propres</li>
+        <li>Analyser concurrents</li>
+    </ul>
+</section>
+
+<section id="erreurs">
+    <h2>❌ Erreurs Fréquentes à Éviter</h2>
+    <ul>
+        <li>Lancer produit sans test</li>
+        <li>Fournisseur lent</li>
+        <li>Ne pas calculer marges</li>
+        <li>Trop de produits simultanément</li>
+    </ul>
+</section>
+
+<!-- BOUTON RETOUR EN HAUT -->
+<button onclick="topFunction()" id="topBtn" title="Retour en haut">↑</button>
+
+<footer>
+    <p>Guide Dropshipping © 2025 – Créé pour débutants</p>
+</footer>
+
+<script>
+    // Bouton retour en haut + animation sections
+    let topBtn = document.getElementById("topBtn");
+    window.onscroll = function() {scrollFunction()};
+    function scrollFunction() {
+        if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+            topBtn.style.display = "block";
+        } else {
+            topBtn.style.display = "none";
+        }
+
+        let sections = document.querySelectorAll("section, header");
+        let scrollY = window.scrollY + window.innerHeight*0.8;
+        sections.forEach(sec => {
+            if(sec.offsetTop < scrollY) {
+                sec.style.opacity = "1";
+                sec.style.transform = "translateY(0)";
+            }
+        });
+    }
+    function topFunction() {
+        window.scrollTo({top: 0, behavior: 'smooth'});
+    }
+</script>
+
+</body>
+</html>
