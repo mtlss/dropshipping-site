@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guide Dropshipping Pro</title>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #4a5568 0%, #2d3748 100%);
+        color: #e0e0e0;
+        line-height: 1.7;
+        scroll-behavior: smooth;
+    }
+
+    /* MENU FIXE */
+    nav {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background: rgba(55, 65, 81, 0.95);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid rgba(255, 215, 0, 0.3);
+        z-index: 1000;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+    }
+    
+    nav ul {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        padding: 15px 20px;
+        gap: 25px;
+    }
+    
+    nav ul li a {
+        color: #ffd700;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 0.95em;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        transition: all 0.3s ease;
+        padding: 8px 15px;
+        border-radius: 8px;
+    }
+    
+    nav ul li a:hover {
+        background: rgba(255, 215, 0, 0.1);
+        transform: translateY(-2px);
+    }
+
+    /* HEADER */
+    header {
+        padding: 120px 20px 60px;
+        text-align: center;
+        background: linear-gradient(135deg, #5a6c7d 0%, #4a5568 100%);
+        border-bottom: 2px solid #ffd700;
+    }
+    
+    header h1 {
+        font-size: 3em;
+        color: #ffd700;
+        margin-bottom: 15px;
+        text-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+    }
+    
+    header p {
+        font-size: 1.3em;
+        color: #b0b0b0;
+    }
+
+    /* SECTIONS */
+    section {
+        max-width: 1000px;
+        margin: 40px auto;
+        padding: 40px;
+        background: linear-gradient(135deg, #4a5568 0%, #3d4a5c 100%);
+        border-radius: 20px;
+        border: 1px solid rgba(255, 215, 0, 0.2);
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.6s ease;
+    }
+    
+    section.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    
+    h2 {
+        color: #ffd700;
+        font-size: 2em;
+        margin-bottom: 25px;
+        border-bottom: 2px solid rgba(255, 215, 0, 0.3);
+        padding-bottom: 15px;
+    }
+    
+    h3 {
+        color: #ffc400;
+        font-size: 1.4em;
+        margin: 25px 0 15px;
+    }
+    
+    ul {
+        list-style: none;
+        padding-left: 0;
+    }
+    
+    ul li {
+        padding: 12px 0 12px 35px;
+        position: relative;
+        font-size: 1.1em;
+        color: #d0d0d0;
+    }
+    
+    ul li:before {
+        content: "▸";
+        position: absolute;
+        left: 10px;
+        color: #ffd700;
+        font-weight: bold;
+    }
+    
+    a {
+        color: #ffd700;
+        text-decoration: none;
+        border-bottom: 1px solid transparent;
+        transition: all 0.3s ease;
+    }
+    
+    a:hover {
+        border-bottom: 1px solid #ffd700;
+    }
+
+    /* BOUTON RETOUR HAUT */
+    #topBtn {
+        display: none;
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+        color: #1a1a1a;
+        border: none;
+        width: 55px;
+        height: 55px;
+        border-radius: 50%;
+        font-size: 24px;
+        cursor: pointer;
+        box-shadow: 0 5px 25px rgba(255, 215, 0, 0.4);
+        transition: all 0.3s ease;
+        z-index: 999;
+    }
+    
+    #topBtn:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 30px rgba(255, 215, 0, 0.6);
+    }
+
+    /* FOOTER */
+    footer {
+        text-align: center;
+        padding: 30px;
+        background: #374151;
+        color: #9ca3af;
+        border-top: 1px solid rgba(255, 215, 0, 0.2);
+        margin-top: 50px;
+    }
+
+    @media(max-width: 768px) {
+        header h1 { font-size: 2em; }
+        section { margin: 20px 15px; padding: 25px; }
+        nav ul { flex-direction: column; gap: 10px; }
+    }
+</style>
+</head>
+<body>
+
+<!-- MENU -->
+<nav>
+    <ul>
+        <li><a href="#intro">🏠 Accueil</a></li>
+        <li><a href="#produit">🔎 Produit</a></li>
+        <li><a href="#test">🧪 Tester</a></li>
+        <li><a href="#astuces">⚡ Astuces</a></li>
+        <li><a href="#erreurs">❌ Erreurs</a></li>
+        <li><a href="#fournisseurs">📦 Fournisseurs</a></li>
+    </ul>
+</nav>
+
+<!-- HEADER -->
+<header id="intro">
+    <h1>Guide Dropshipping Pro</h1>
+    <p>Tout ce qu'il faut savoir pour réussir</p>
+</header>
+
+<!-- CHOISIR PRODUIT -->
+<section id="produit">
+    <h2>🔎 Comment Choisir le Bon Produit</h2>
+    <ul>
+        <li>Produit utile ou effet "wow"</li>
+        <li>Peu compétitif</li>
+        <li>Marge 30-50%</li>
+        <li>Facile à expédier</li>
+    </ul>
+    <h3>💡 Trouver les tendances</h3>
+    <ul>
+        <li><a href="https://trends.google.com/trends/?geo=FR" target="_blank">Google Trends</a></li>
+        <li>Amazon, AliExpress, eBay → best-sellers</li>
+        <li>TikTok, Instagram, Pinterest → observer produits populaires</li>
+    </ul>
+</section>
+
+<!-- TESTER PRODUIT -->
+<section id="test">
+    <h2>🧪 Tester un produit avant de lancer</h2>
+    <ul>
+        <li>Créer page produit ou formulaire test</li>
+        <li>Publier vidéos sur TikTok/Instagram</li>
+        <li>Observer likes, commentaires, partages</li>
+        <li>Si positif → petite campagne pub</li>
+    </ul>
+</section>
+
+<!-- ASTUCES -->
+<section id="astuces">
+    <h2>⚡ Astuces pour Réussir</h2>
+    <ul>
+        <li>Commencer avec un seul produit</li>
+        <li>Vidéo marketing courte</li>
+        <li>Fournisseur rapide</li>
+        <li>Images propres</li>
+        <li>Analyser concurrents</li>
+    </ul>
+</section>
+
+<!-- ERREURS -->
+<section id="erreurs">
+    <h2>❌ Erreurs Fréquentes à Éviter</h2>
+    <ul>
+        <li>Lancer produit sans test</li>
+        <li>Fournisseur lent</li>
+        <li>Ne pas calculer marges</li>
+        <li>Trop de produits simultanément</li>
+    </ul>
+</section>
+
+<!-- FOURNISSEURS -->
+<section id="fournisseurs">
+    <h2>📦 Comment Trouver de Bons Fournisseurs</h2>
+    <p style="color: #b0b0b0; margin-bottom: 20px;">Quelques plateformes fiables pour débuter :</p>
+    
+    <h3>🌍 Fournisseurs internationaux</h3>
+    <ul>
+        <li><a href="https://www.aliexpress.com" target="_blank">AliExpress</a></li>
+        <li><a href="https://www.alibaba.com" target="_blank">Alibaba</a></li>
+        <li><a href="https://cjdropshipping.com" target="_blank">CJ Dropshipping</a></li>
+        <li><a href="https://www.spocket.co" target="_blank">Spocket</a></li>
+    </ul>
+    
+    <h3>🇪🇺 Europe</h3>
+    <ul>
+        <li><a href="https://www.bigbuy.eu" target="_blank">BigBuy</a></li>
+        <li><a href="https://www.beezup.com" target="_blank">BeezUP</a></li>
+    </ul>
+    
+    <h3>🇫🇷 France</h3>
+    <ul>
+        <li><a href="https://www.chinadivision.com" target="_blank">France-Dropshipping</a></li>
+        <li><a href="https://www.colissimo.entreprise.laposte.fr" target="_blank">Colissimo Pro</a></li>
+    </ul>
+</section>
+
+<!-- BOUTON RETOUR HAUT -->
+<button onclick="topFunction()" id="topBtn">↑</button>
+
+<!-- FOOTER -->
+<footer>
+    <p>Guide Dropshipping © 2025 – Créé pour les entrepreneurs</p>
+</footer>
+
+<script>
+    // Animation au scroll
+    const sections = document.querySelectorAll('section');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.1 });
+    
+    sections.forEach(section => observer.observe(section));
+    
+    // Bouton retour haut
+    const topBtn = document.getElementById('topBtn');
+    window.onscroll = function() {
+        if (document.documentElement.scrollTop > 300) {
+            topBtn.style.display = 'block';
+        } else {
+            topBtn.style.display = 'none';
+        }
+    };
+    
+    function topFunction() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+</script>
+
+</body>
+</html>
