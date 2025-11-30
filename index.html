@@ -1,3 +1,328 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Guide Complet : Dropshipping Débutant</title>
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1TJ4329Y4E"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-1TJ4329Y4E');
+</script>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #0a0a0a;
+        color: #ffffff;
+        scroll-behavior: smooth;
+    }
+
+    /* ANIMATION DE DÉMARRAGE */
+    #intro-animation {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #000000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+        animation: fadeOut 1s ease-in-out 2s forwards;
+    }
+    
+    #intro-animation h1 {
+        font-size: 8em;
+        font-weight: bold;
+        color: transparent;
+        -webkit-text-stroke: 3px #ffffff;
+        text-stroke: 3px #ffffff;
+        animation: slideIn 1s ease-out;
+    }
+    
+    @keyframes slideIn {
+        from {
+            opacity: 0;
+            transform: scale(0.5);
+        }
+        to {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+    
+    @keyframes fadeOut {
+        to {
+            opacity: 0;
+            visibility: hidden;
+        }
+    }
+
+    /* MENU FIXE AVEC ICÔNES */
+    nav {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background-color: #1a1a1a;
+        color: white;
+        z-index: 1000;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+    }
+    nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 10px 20px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    nav ul li {
+        margin-right: 15px;
+        display: flex;
+        align-items: center;
+    }
+    nav ul li a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+    }
+    nav ul li a span.icon {
+        margin-right: 5px;
+        font-size: 1.1em;
+    }
+    nav ul li a:hover {
+        color: #ffd700;
+    }
+
+    header {
+        background-color: #1a1a1a;
+        color: white;
+        padding: 100px 20px 25px 20px;
+        text-align: center;
+        transition: opacity 1s ease-in-out;
+    }
+    
+    section {
+        background-color: #1a1a1a;
+        margin: 20px auto;
+        padding: 20px;
+        max-width: 900px;
+        border-radius: 10px;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.8s ease-in-out;
+    }
+
+    h2 { color: #ffd700; margin-top:0; }
+    h3 { color: #ffffff; }
+    ul { line-height: 1.8; padding-left: 20px; color: #e0e0e0; }
+    a { color: #ffd700; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    footer {
+        background-color: #0a0a0a;
+        color: white;
+        text-align: center;
+        padding: 15px;
+        margin-top: 30px;
+    }
+
+    /* BOUTON RETOUR EN HAUT */
+    #topBtn {
+        display: none;
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        z-index: 100;
+        font-size: 18px;
+        background-color: #ffd700;
+        color: #000000;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 50px;
+        cursor: pointer;
+        box-shadow: 0 2px 5px rgba(255,215,0,0.5);
+    }
+    #topBtn:hover { background-color: #ffed4e; }
+
+    /* BURGER MENU */
+    .menu-btn {
+      display: none;
+    }
+    .menu-icon {
+      display: none;
+      cursor: pointer;
+      width: 30px;
+      height: 25px;
+      position: relative;
+      margin-left: 20px;
+    }
+    .navicon, .navicon:before, .navicon:after {
+      background: white;
+      height: 3px;
+      width: 30px;
+      display: block;
+      position: absolute;
+      transition: all 0.3s ease;
+      border-radius: 2px;
+    }
+    .navicon:before {
+      content: '';
+      top: -8px;
+    }
+    .navicon:after {
+      content: '';
+      top: 8px;
+    }
+    /* Quand burger checked, change l'icône */
+    .menu-btn:checked + .menu-icon .navicon {
+      background: transparent;
+    }
+    .menu-btn:checked + .menu-icon .navicon:before {
+      transform: rotate(-45deg);
+      top: 0;
+    }
+    .menu-btn:checked + .menu-icon .navicon:after {
+      transform: rotate(45deg);
+      top: 0;
+    }
+
+    /* MOBILE : cacher le menu normal et afficher burger */
+    @media (max-width: 768px) {
+      nav ul {
+        display: none;
+        flex-direction: column;
+        background-color: #1a1a1a;
+        width: 100%;
+        padding: 0;
+      }
+      nav ul li {
+        margin: 0;
+        border-bottom: 1px solid #333;
+        width: 100%;
+      }
+      nav ul li a {
+        display: block;
+        padding: 12px 20px;
+        width: 100%;
+      }
+      .menu-btn {
+        display: block;
+        position: absolute;
+        top: 14px;
+        right: 20px;
+        z-index: 1100;
+      }
+      .menu-icon {
+        display: block;
+        position: absolute;
+        top: 15px;
+        right: 60px;
+        z-index: 1101;
+      }
+      /* Quand burger checked, afficher menu */
+      .menu-btn:checked ~ ul {
+        display: flex;
+      }
+    }
+
+    @media(max-width: 600px) {
+        section { margin: 10px; padding: 15px; }
+        #intro-animation h1 { 
+            font-size: 4em;
+            -webkit-text-stroke: 2px #ffffff;
+        }
+        header h1 {
+            font-size: 1.8em;
+        }
+        header p {
+            font-size: 1em;
+        }
+        h2 {
+            font-size: 1.5em;
+        }
+        .button-container {
+            flex-direction: column !important;
+        }
+        .button-container button {
+            width: 100% !important;
+            margin: 5px 0 !important;
+        }
+    }
+    
+    @media(max-width: 400px) {
+        #intro-animation h1 { 
+            font-size: 3em;
+        }
+        header {
+            padding: 80px 15px 20px;
+        }
+        section {
+            padding: 12px;
+            margin: 10px 5px;
+        }
+    }
+</style>
+</head>
+<body>
+
+<!-- ANIMATION DE DÉMARRAGE -->
+<div id="intro-animation">
+    <h1>MT</h1>
+</div>
+
+<!-- MENU DE NAVIGATION -->
+<nav>
+  <!-- Checkbox pour le burger -->
+  <input type="checkbox" id="menu-btn" class="menu-btn" />
+  <label for="menu-btn" class="menu-icon">
+    <span class="navicon"></span>
+  </label>
+  <ul>
+      <li><a href="#intro"><span class="icon">🏠</span>Introduction</a></li>
+      <li><a href="#produit"><span class="icon">🔎</span>Choisir Produit</a></li>
+      <li><a href="#tendances"><span class="icon">🔥</span>Tendances</a></li>
+      <li><a href="#evaluation"><span class="icon">🎯</span>Évaluer Produit</a></li>
+      <li><a href="#test"><span class="icon">🧪</span>Tester Produit</a></li>
+      <li><a href="#astuces"><span class="icon">⚡</span>Astuces</a></li>
+      <li><a href="#erreurs"><span class="icon">❌</span>Erreurs</a></li>
+      <li><a href="#fournisseurs"><span class="icon">📦</span>Fournisseurs</a></li>
+  </ul>
+</nav>
+
+<header id="intro">
+    <h1>Guide Complet : Comment Faire du Dropshipping</h1>
+    <p>De la recherche de produit à la mise en ligne de ta boutique</p>
+</header>
+
+<section id="produit">
+    <h2>🔎 Comment Choisir le Bon Produit</h2>
+    <ul>
+        <li>Produit utile ou effet "wow"</li>
+        <li>Peu compétitif</li>
+        <li>Marge 30-50% Concrètement :Si tu achètes un produit 10€ chez ton fournisseur 
+           Tu devrais le vendre entre 14,30€ (marge 30%) et 20€ (marge 50%)
+           Cela te laisse 4,30€ à 10€ de bénéfice par ventE</li>
+        <li>Facile à expédier</li>
+    </ul>
+    <h3>💡 Trouver les tendances</h3>
+    <ul>
+        <li><a href="https://trends.google.com/trends/?geo=FR" target="_blank">Google Trends</a></li>
+        <li>Amazon, AliExpress, eBay → best-sellers</li>
+        <li>TikTok, Instagram, Pinterest → observer produits populaires</li>
+    </ul>
+</section>
+
 <section id="tendances">
     <h2>🔥 Sites pour Voir ce qui Marche Maintenant</h2>
     <p>Découvre les produits tendance en temps réel :</p>
@@ -87,40 +412,161 @@
             ✅ Clique sur chaque bouton pour ouvrir le site - Aucun blocage !
         </p>
     </div>
-
-    <h3 style="color: #ffd700; margin-top: 40px;">💡 Comment Utiliser Ces Sites :</h3>
-    <div style="background: rgba(255,215,0,0.1); padding: 15px; border-radius: 8px; margin: 15px 0;">
-        <p style="color: #ffd700; font-weight: bold; margin-bottom: 10px;">📊 Google Trends :</p>
-        <p style="color: #e0e0e0; margin: 5px 0;">→ Recherche des mots-clés de produits (ex: "humidificateur", "masseur cervical")</p>
-        <p style="color: #e0e0e0; margin: 5px 0;">→ Vérifie si la tendance est en hausse ou en baisse</p>
-        <p style="color: #e0e0e0; margin: 5px 0;">→ Compare plusieurs produits entre eux</p>
-    </div>
     
-    <div style="background: rgba(255,215,0,0.1); padding: 15px; border-radius: 8px; margin: 15px 0;">
-        <p style="color: #ffd700; font-weight: bold; margin-bottom: 10px;">🛒 Amazon Best-Sellers :</p>
-        <p style="color: #e0e0e0; margin: 5px 0;">→ Explore les catégories (électronique, maison, beauté...)</p>
-        <p style="color: #e0e0e0; margin: 5px 0;">→ Regarde les avis et questions clients pour identifier les besoins</p>
-        <p style="color: #e0e0e0; margin: 5px 0;">→ Note les produits avec beaucoup d'avis positifs mais prix élevé</p>
-    </div>
-    
-    <div style="background: rgba(255,215,0,0.1); padding: 15px; border-radius: 8px; margin: 15px 0;">
-        <p style="color: #ffd700; font-weight: bold; margin-bottom: 10px;">📦 AliExpress :</p>
-        <p style="color: #e0e0e0; margin: 5px 0;">→ Filtre par "Commandes" pour voir les produits populaires</p>
-        <p style="color: #e0e0e0; margin: 5px 0;">→ Vérifie les évaluations du vendeur (minimum 95%)</p>
-        <p style="color: #e0e0e0; margin: 5px 0;">→ Calcule ta marge (prix x2.5 ou x3 pour avoir ton prix de vente)</p>
-    </div>
-    
-    <div style="background: rgba(255,215,0,0.1); padding: 15px; border-radius: 8px; margin: 15px 0;">
-        <p style="color: #ffd700; font-weight: bold; margin-bottom: 10px;">📱 TikTok :</p>
-        <p style="color: #e0e0e0; margin: 5px 0;">→ Cherche #tiktokmademebuyit, #amazonfinds, #productreview</p>
-        <p style="color: #e0e0e0; margin: 5px 0;">→ Note les produits avec beaucoup d'engagement (likes, commentaires)</p>
-        <p style="color: #e0e0e0; margin: 5px 0;">→ Analyse le style de vidéo qui fonctionne le mieux</p>
-    </div>
-    
-    <div style="background: rgba(255,215,0,0.1); padding: 15px; border-radius: 8px; margin: 15px 0;">
-        <p style="color: #ffd700; font-weight: bold; margin-bottom: 10px;">🔥 Thieve.co :</p>
-        <p style="color: #e0e0e0; margin: 5px 0;">→ Découvre les stores Shopify qui performent</p>
-        <p style="color: #e0e0e0; margin: 5px 0;">→ Analyse leurs best-sellers et stratégies marketing</p>
-        <p style="color: #e0e0e0; margin: 5px 0;">→ Inspire-toi de leur design et présentation produit</p>
-    </div>
+    <h3>💡 Quoi chercher sur chaque site :</h3>
+    <ul>
+        <li><strong>Google Trends :</strong> Tape des mots-clés de produits et regarde si la tendance monte</li>
+        <li><strong>Amazon :</strong> Explore les catégories best-sellers et lis les avis clients</li>
+        <li><strong>AliExpress :</strong> Filtre par "Commandes" pour voir les produits populaires</li>
+        <li><strong>TikTok :</strong> Cherche #tiktokmademebuyit, #amazonfinds pour les produits viraux</li>
+        <li><strong>Thieve.co :</strong> Découvre les stores Shopify qui performent et leurs best-sellers</li>
+    </ul>
 </section>
+
+<section id="evaluation">
+    <h2>🎯 Sites pour Évaluer le Potentiel d'un Produit</h2>
+    <p>Avant de te lancer, vérifie si ton produit peut bien marcher en dropshipping :</p>
+    
+    <h3>🔍 Outils d'analyse recommandés :</h3>
+    <ul>
+        <li><a href="https://adspy.com" target="_blank">AdSpy</a> - Voir les pubs Facebook qui marchent</li>
+        <li><a href="https://www.dropispy.com" target="_blank">Dropispy</a> - Espionner les boutiques à succès</li>
+        <li><a href="https://www.ecomhunt.com" target="_blank">Ecomhunt</a> - Produits pré-analysés avec potentiel</li>
+        <li><a href="https://www.nichescraper.com" target="_blank">Niche Scraper</a> - Trouver des produits de niche rentables</li>
+        <li><a href="https://www.pexda.com" target="_blank">Pexda</a> - Analyser la concurrence sur un produit</li>
+        <li><a href="https://sellthetrend.com" target="_blank">Sell The Trend</a> - Produits tendance avec données</li>
+    </ul>
+    
+    <h3>✅ Critères pour évaluer un bon produit :</h3>
+    <ul>
+        <li><strong>Marges :</strong> Le produit doit coûter 3x moins cher que ton prix de vente (ex: achète à 10€, vends à 30€)</li>
+        <li><strong>Concurrence :</strong> Vérifie avec AdSpy/Dropispy - si +50 boutiques vendent déjà, passe ton chemin</li>
+        <li><strong>Demande :</strong> Utilise Google Trends pour voir si l'intérêt est stable ou monte</li>
+        <li><strong>Qualité :</strong> Lis les avis sur AliExpress (minimum 4.5/5 étoiles avec 100+ commandes)</li>
+        <li><strong>Livraison :</strong> Privilégie des fournisseurs qui livrent en 7-15 jours maximum</li>
+        <li><strong>Poids/Taille :</strong> Évite les produits lourds ou fragiles (frais d'envoi trop élevés)</li>
+    </ul>
+</section>
+
+<section id="test">
+    <h2>🧪 Tester un produit avant de lancer</h2>
+    <ul>
+        <li>Créer page produit ou formulaire test</li>
+        <li>Publier vidéos sur TikTok/Instagram</li>
+        <li>Observer likes, commentaires, partages</li>
+        <li>Si positif → petite campagne pub</li>
+    </ul>
+</section>
+
+<section id="astuces">
+    <h2>⚡ Astuces pour Réussir</h2>
+    <ul>
+        <li>Commencer avec un seul produit</li>
+        <li>Vidéo marketing courte</li>
+        <li>Fournisseur rapide</li>
+        <li>Images propres</li>
+        <li>Analyser concurrents</li>
+    </ul>
+</section>
+
+<section id="erreurs">
+    <h2>❌ Erreurs Fréquentes à Éviter</h2>
+    <ul>
+        <li>Lancer produit sans test</li>
+        <li>Fournisseur lent</li>
+        <li>Ne pas calculer marges</li>
+        <li>Trop de produits simultanément</li>
+    </ul>
+</section>
+
+<section id="fournisseurs">
+    <h2>📦 Comment Trouver de Bons Fournisseurs</h2>
+    <p>Quelques plateformes fiables pour débuter :</p>
+    <h3>🌍 Fournisseurs internationaux</h3>
+    <ul>
+        <li><a href="https://www.aliexpress.com" target="_blank">AliExpress</a></li>
+        <li><a href="https://www.alibaba.com" target="_blank">Alibaba</a></li>
+        <li><a href="https://cjdropshipping.com" target="_blank">CJ Dropshipping</a></li>
+        <li><a href="https://www.spocket.co" target="_blank">Spocket</a></li>
+    </ul>
+    <h3>🇪🇺 Europe</h3>
+    <ul>
+        <li><a href="https://www.bigbuy.eu" target="_blank">BigBuy</a></li>
+        <li><a href="https://www.beezup.com" target="_blank">BeezUP</a></li>
+    </ul>
+    <h3>🇫🇷 France</h3>
+    <ul>
+        <li><a href="https://www.chinadivision.com" target="_blank">France-Dropshipping</a></li>
+        <li><a href="https://www.colissimo.entreprise.laposte.fr" target="_blank">Colissimo Pro</a></li>
+    </ul>
+</section>
+
+<!-- BOUTON RETOUR EN HAUT -->
+<button onclick="topFunction()" id="topBtn" title="Retour en haut">↑</button>
+
+<footer>
+    <p>© 2025 – Créé par MT</p>
+</footer>
+
+<script>
+    // Fonction pour analyser les tendances automatiquement
+    function analyserTendances() {
+       // Liste des sites à ouvrir
+        const sites = [
+            { url: 'https://trends.google.com/trends/?geo=FR', nom: 'Google Trends' },
+            { url: 'https://www.amazon.fr/gp/bestsellers/', nom: 'Amazon Best-Sellers' },
+            { url: 'https://www.aliexpress.com/category/100003070/consumer-electronics.html', nom: 'AliExpress Trending' },
+            { url: 'https://www.tiktok.com/tag/tiktokmademebuyit', nom: 'TikTok' },
+            { url: 'https://www.thieve.co', nom: 'Thieve.co' }
+        ];
+        
+        // Message d'alerte avec instructions
+        const message = `🚀 ANALYSE DES TENDANCES
+        
+✅ ${sites.length} sites vont s'ouvrir !
+
+⚠️ IMPORTANT : 
+Si les pop-ups sont bloquées, clique sur l'icône 🚫 dans la barre d'adresse et autorise-les.
+
+💡 ASTUCE : 
+Consulte les instructions ci-dessous pour savoir quoi rechercher sur chaque site !`;
+        
+        alert(message);
+        
+        // Ouvre tous les sites avec un délai
+        sites.forEach((site, index) => {
+            setTimeout(() => {
+                const newWindow = window.open(site.url, '_blank');
+                if (!newWindow) {
+                    console.log(`❌ ${site.nom} bloqué par le navigateur`);
+                }
+            }, index * 800); // 800ms entre chaque ouverture
+        });
+    }
+
+    // Bouton retour en haut + animation sections
+    let topBtn = document.getElementById("topBtn");
+    window.onscroll = function() {scrollFunction()};
+    function scrollFunction() {
+        if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+            topBtn.style.display = "block";
+        } else {
+            topBtn.style.display = "none";
+        }
+
+        let sections = document.querySelectorAll("section, header");
+        let scrollY = window.scrollY + window.innerHeight*0.8;
+        sections.forEach(sec => {
+            if(sec.offsetTop < scrollY) {
+                sec.style.opacity = "1";
+                sec.style.transform = "translateY(0)";
+            }
+        });
+    }
+    function topFunction() {
+        window.scrollTo({top: 0, behavior: 'smooth'});
+    }
+</script>
+
+</body>
+</html>
